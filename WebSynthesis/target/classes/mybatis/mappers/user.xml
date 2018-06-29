@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+<!-- 이메일 중복 검사를 위한 sql -->
+<select id="emailcheck" parameterType="java.lang.String" 
+resultType="java.lang.String">
+select email from springuser where email = #{email}
+
+</select>
+
+<!-- 회원가입을 위한 sql 
+resultType는 where절 있을 때-->
+<insert id="register" parameterType="User">
+insert into springuser(email,pw,nickname,image)
+values(#{email},#{pw},#{nickname},#{image})
+</insert>
+
+<!-- 로그인 처리를 하기 위해서 email을 가지고 모든정보를
+찾아오는 메소드-->
+<select id ="login" parameterType="java.lang.String" resultType="User">
+select email, pw, nickname, image from springuser where email = #{email}
+</select>
+</mapper>
