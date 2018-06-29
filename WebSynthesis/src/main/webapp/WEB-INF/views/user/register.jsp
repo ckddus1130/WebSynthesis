@@ -8,7 +8,7 @@
 	파일이 업로드되는 폼은 반드시 메소드는 post로 
 	enctype은 multipart/form-data 로 설정되어야합니다.
 	onsubmit에 함수를 연결한 것은 폼의 데이터를 전송할 때
-	유효성 검사를 하기 위해서 입니다.                                                                                      -->
+	유효성 검사를 하기 위해서 입니다.    헤헤 깃 연동 연습                                                                                  -->
 	<form id="registerform" enctype="multipart/form-data" method="post"
 		onsubmit="return check()">
 		<p align="center">
